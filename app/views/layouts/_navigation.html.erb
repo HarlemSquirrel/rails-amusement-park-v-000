@@ -1,0 +1,8 @@
+<% if current_user.nil? %>
+  <li><a href="/signin">Sign in</a></li>
+  <li><a href="/users/new">Sign up</a></li>
+<% else %>
+  <li><a href="/attractions">See attractions</a></li>
+  <li><a href="/users/<%= current_user.id %>"><%= current_user.name %></a></li>
+  <li><a href="/signout">Log Out</a></li>
+<% end %>

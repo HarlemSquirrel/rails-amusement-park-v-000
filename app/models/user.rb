@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :attractions, through: :rides
 
   def mood
-    if self.happiness > self.nausea
+    if !self.happiness.nil? && !self.nausea.nil? && self.happiness > self.nausea
       "happy"
     else
       "sad"
