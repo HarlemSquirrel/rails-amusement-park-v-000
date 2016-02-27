@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
 
-  resources :attractions, only: [:index, :show]
-
+  resources :attractions #, only: [:index, :show, :new, :update, :create]
+  post '/attractions/:id/take_ride', to: 'attractions#take_ride'
   #get '/signup', to: 'users#new'
   get '/signin', to: 'sessions#new'
   get '/signout', to: 'sessions#destroy'
